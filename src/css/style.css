@@ -1,0 +1,72 @@
+:root{
+    --primary-color: #EEB11A;
+    --secondary-color: #A4BD3C;
+    --clean-back-color: #FEFDF7;
+    --accent-1: #39DC4E;
+    --accent-2: #3A310F;
+    --body-font: 'Inter', sans-serif;
+    --script-font: 'Nerko One', cursive;
+}
+
+html{
+    background-color: var(--clean-back-color);
+    font-family: var(--body-font);
+    color: black;
+    height: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+h1,h2,h3,th{
+    font-family: var(--script-font);
+    color: var(--accent-2);
+}
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+header{
+    justify-items: center;
+    display: block;
+
+}
+#pageLogo{
+    float: left;
+}
+header h1,header form{
+    padding: 1em 0;
+}
+footer{
+    width: 100%;
+    margin-bottom: 0;
+}
+#likeColors{
+    text-align: center;
+}
+#likeColorsTable{
+    text-align: center;
+    border: black solid 1px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#likeColorsTable td, #likeColorsTable th{
+    border: black 1px;
+    border-style: none solid none solid;
+}
+#likeColorsTable td{
+    aspect-ratio: 1;
+}
+.colorSquare{
+    width: 80%;
+    aspect-ratio: 1 / 1;
+    background-color: red;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
