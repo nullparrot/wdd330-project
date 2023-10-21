@@ -1,80 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colors - WDD330 Final Project</title>
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
     <header>
-        <h1 id="pageLogo">ColorToolbox</h1>
-        <form>
-            <input type="text" name="color" id="color">
-        </form>
+      <h1 id="pageLogo">ColorToolbox</h1>
+      <form>
+        <input type="text" name="color" id="color" placeholder="Search Color" pattern="#[0-9A-Fa-f]{3,6}"/>
+      </form>
     </header>
     <main>
-        <section>
-            <div></div>
-            <div></div>
-        </section>
-        <section id="likeColors">
-            <h2>Like Colors</h3>
-            <table id="likeColorsTable">
-                <tr>
-                    <th>Monochrome</th>
-                    <th>Analogic</th>
-                    <th>Analogic-Complement</th>
-                    <th>Complement</th>
-                    <th>Triad</th>
-                    <th>Quad</th>
-
-                </tr>
-                <tr>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                    <td><div class="colorSquare"><p>uno</p></div></td>
-                </tr>
-                <tr>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                    <td><div class="colorSquare"><p>dos</p></div></td>
-                </tr>
-                <tr>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                    <td><div class="colorSquare"><p>tres</p></div></td>
-                </tr>
-                <tr>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                    <td><div class="colorSquare"><p>quatro</p></div></td>
-                </tr>
-                <tr>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                    <td><div class="colorSquare"><p>cinco</p></div></td>
-                </tr>
-            </table>
-        </section>
+      <section id="mainColor">
+        <div id="colorDisplay">
+        </div>
+        <div id="colorDetails">
+            <h3>Color Hex</h3>
+            <p>Color Name</p>
+            <p>Color RGB</p>
+            <p>Color HSV</p>
+            <p>Color CMYK</p>
+        </div>
+      </section>
+      <section id="likeColors">
+        <h2>Like Colors</h2>
+        <div id="rainbow">
+          <div class="colorColumn" id="monochrome">
+            <h3>Monochrome</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+          <div class="colorColumn" id="analogic">
+            <h3>Analogic</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+          <div class="colorColumn" id="analogicComplement">
+            <h3>Analogic-Complement</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+          <div class="colorColumn" id="complement">
+            <h3>Complement</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+          <div class="colorColumn" id="triad">
+            <h3>Triad</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+          <div class="colorColumn" id="quad">
+            <h3>Quad</h3>
+            <a class="colorSquare" href="#">Uno</a>
+            <a class="colorSquare" href="#">dos</a>
+            <a class="colorSquare" href="#">Tres</a>
+            <a class="colorSquare" href="#">Quatro</a>
+            <a class="colorSquare" href="#">Cinco</a>
+            <a class="colorSquare" href="#">seis</a>
+          </div>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy 2023 Andrew</p>
+      <p>&copy 2023 Andrew</p>
     </footer>
-</body>
+  </body>
 </html>

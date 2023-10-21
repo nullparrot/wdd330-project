@@ -13,7 +13,7 @@ html{
     font-family: var(--body-font);
     color: black;
     height: 100%;
-    max-width: 1400px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -28,45 +28,59 @@ body{
     margin: 0;
 }
 header{
-    justify-items: center;
-    display: block;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 0 10px;
 }
-#pageLogo{
-    float: left;
+header h1{
+    margin: 0;
 }
-header h1,header form{
-    padding: 1em 0;
+input{
+    text-align: center;
 }
 footer{
     width: 100%;
     margin-bottom: 0;
 }
-#likeColors{
+#likeColors h2{
     text-align: center;
-}
-#likeColorsTable{
-    text-align: center;
-    border: black solid 1px;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-    max-width: 1200px;
     margin: 0 auto;
 }
-#likeColorsTable td, #likeColorsTable th{
-    border: black 1px;
-    border-style: none solid none solid;
+#rainbow{
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: end;
 }
-#likeColorsTable td{
-    aspect-ratio: 1;
+.colorColumn{
+    width: 100%;
+}
+#mainColor{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 .colorSquare{
     width: 80%;
+    max-width: 100px;
     aspect-ratio: 1 / 1;
     background-color: red;
-    margin: 0 auto;
+    margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#colorDisplay{
+    background-color: cornflowerblue;
+    min-width: 100px;
+    width: 50%;
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
 }
