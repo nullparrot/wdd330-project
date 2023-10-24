@@ -20,6 +20,7 @@ html{
 h1,h2,h3,th{
     font-family: var(--script-font);
     color: var(--accent-2);
+    text-transform: capitalize;
 }
 body{
     height: 100%;
@@ -53,12 +54,17 @@ footer{
 #rainbow{
     text-align: center;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(7,1fr);
     justify-items: center;
     align-items: end;
 }
 .colorColumn{
     width: 100%;
+    display: grid;
+    grid-template-columns: 2fr repeat(6,1fr);
+    text-align: right;
+    align-items: center;
+    margin: 10px;
 }
 #mainColor{
     display: flex;
@@ -68,18 +74,25 @@ footer{
     justify-content: center;
 }
 .colorSquare{
-    width: 80%;
-    max-width: 100px;
+    width: 100%;
     aspect-ratio: 1 / 1;
     background-color: red;
     margin: 10px auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size: 1.5vw;
 }
 #colorDisplay{
     min-width: 100px;
     width: 50%;
     max-width: 500px;
     aspect-ratio: 1 / 1;
+}
+a{
+    text-decoration: none;
 }

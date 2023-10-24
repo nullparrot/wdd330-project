@@ -1,12 +1,5 @@
-// fetch("https://www.thecolorapi.com/id?hex=0047AB0")
-//   .then((tmp) => {
-//     return tmp.json();
-//   })
-//   .then((mrtmp) => {
-//     colorDeets = mrtmp.results;
-//   });
-
 import { getData, getScheme } from "./apiTalker.mjs";
+import { getParam, getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 function loadColors(colorPack) {
   document.getElementById("colorHex").innerHTML = colorPack.hex.value;
@@ -29,32 +22,45 @@ async function loadRainbow(color) {
     "triad",
     "quad",
   ];
-  document.getElementById('rainbow').innerHTML = ''
+  document.getElementById("rainbow").innerHTML = "";
   schemes.forEach(async (scheme) => {
     let rainbow = await getScheme(color, scheme, 6);
     let pillar = document.createElement("div");
     pillar.classList.add("colorColumn");
-    let cap = document.createElement('h3')
-    cap.innerHTML = rainbow.mode
-    pillar.appendChild(cap)
+    let cap = document.createElement("h3");
+    cap.innerHTML = rainbow.mode;
+    pillar.appendChild(cap);
     rainbow.colors.forEach((splotch) => {
-      let dot = document.createElement("p");
+      let dot = document.createElement("a");
       dot.classList.add("colorSquare");
+      dot.href = `./?color=${splotch.hex.clean}`;
       dot.style.backgroundColor = splotch.hex.value;
       dot.innerHTML = splotch.hex.value;
       pillar.appendChild(dot);
     });
-    document.getElementById('rainbow').appendChild(pillar)
+    document.getElementById("rainbow").appendChild(pillar);
   });
 }
 
-async function colors(e) {
+async function getColor(color) {
+  let facts = await getData(color);
+  loadColors(facts);
+  loadRainbow(color);
+}
+
+function colors(e) {
   e.preventDefault();
   let mycolor = document.getElementById("color").value;
-  let facts = await getData(mycolor);
-  loadColors(facts);
-  loadRainbow(mycolor);
+  getColor(mycolor);
   return false;
+}
+
+let mainColor = await getParam("color");
+console.log(mainColor);
+if (mainColor) {
+  getColor(mainColor);
+} else {
+  getColor("#6495ED");
 }
 
 document.getElementById("searchBox").addEventListener("submit", colors);
