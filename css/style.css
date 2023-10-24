@@ -78,7 +78,6 @@ footer{
     justify-content: center;
 }
 #colorDisplay{
-    background-color: cornflowerblue;
     min-width: 100px;
     width: 50%;
     max-width: 500px;

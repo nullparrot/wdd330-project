@@ -8,12 +8,8 @@ function convertToJson(res) {
   }
 }
 
-export default class colorCall {
-  constructor(color) {}
-  async getData(color) {
-    const response = await fetch(baseURL + color.replace(/[^0-9a-f]/gi, ""));
-    const data = await convertToJson(response);
-    console.log(await data);
-    return data.Result;
+export default async function getData(color) {
+    let response = await fetch(baseURL + color.replace(/[^0-9a-f]/gi, ""));
+    const data = convertToJson(response);
+    return await data;
   }
-}

@@ -10,7 +10,7 @@
   <body>
     <header>
       <h1 id="pageLogo">ColorToolbox</h1>
-      <form>
+      <form id="searchBox">
         <input type="text" name="color" id="color" placeholder="Search Color" pattern="#[0-9A-Fa-f]{3,6}"/>
       </form>
     </header>
@@ -19,11 +19,11 @@
         <div id="colorDisplay">
         </div>
         <div id="colorDetails">
-            <h3>Color Hex</h3>
-            <p>Color Name</p>
-            <p>Color RGB</p>
-            <p>Color HSV</p>
-            <p>Color CMYK</p>
+            <h3>Color Hex: <span id="colorHex"></span></h3>
+            <p>Color Name: <span id="colorName"></span></p>
+            <p>Color RGB: <span id="colorRGB"></span></p>
+            <p>Color HSV: <span id="colorHSV"></span></p>
+            <p>Color CMYK: <span id="colorCMYK"></span></p>
         </div>
       </section>
       <section id="likeColors">

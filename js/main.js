@@ -6,10 +6,24 @@
 //     colorDeets = mrtmp.results;
 //   });
 
-import colorCall from "./apiTalker.mjs";
+import getData from "./apiTalker.mjs";
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const color = urlParams.get("color");
-const colorFacts = colorCall.getData(color)
-console.log(colorFacts)
+function loadColors(colorPack) {
+  document.getElementById("colorHex").innerHTML = colorPack.hex.value;
+  document.getElementById("colorName").innerHTML = colorPack.name.value;
+  document.getElementById("colorRGB").innerHTML = colorPack.rgb.value;
+  document.getElementById("colorHSV").innerHTML = colorPack.hsv.value;
+  document.getElementById("colorCMYK").innerHTML = colorPack.cmyk.value;
+  document.getElementById('colorDisplay').style.backgroundColor = colorPack.hex.value;
+  return colorPack;
+}
+
+async function colors(e) {
+  e.preventDefault();
+  let mycolor = document.getElementById("color").value;
+  let facts = await getData(mycolor);
+  console.log(loadColors(facts));
+  return false;
+}
+
+document.getElementById("searchBox").addEventListener("submit", colors);
