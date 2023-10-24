@@ -16,7 +16,6 @@ function loadColors(colorPack) {
   document.getElementById("colorCMYK").innerHTML = colorPack.cmyk.value;
   document.getElementById("colorDisplay").style.backgroundColor =
     colorPack.hex.value;
-  return colorPack;
 }
 
 async function loadRainbow(color) {
@@ -53,6 +52,7 @@ async function colors(e) {
   e.preventDefault();
   let mycolor = document.getElementById("color").value;
   let facts = await getData(mycolor);
+  loadColors(facts);
   loadRainbow(mycolor);
   return false;
 }
