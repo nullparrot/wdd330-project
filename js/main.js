@@ -9,6 +9,7 @@ function loadColors(colorPack) {
   document.getElementById("colorCMYK").innerHTML = colorPack.cmyk.value;
   document.getElementById("colorDisplay").style.backgroundColor =
     colorPack.hex.value;
+    setLocalStorage('lastColor',colorPack.hex.clean)
 }
 
 async function loadRainbow(color) {
@@ -60,7 +61,13 @@ console.log(mainColor);
 if (mainColor) {
   getColor(mainColor);
 } else {
-  getColor("#6495ED");
+   let lastColor = getLocalStorage('lastColor')
+   console.log(lastColor)
+  if (lastColor){
+    getColor(lastColor)
+  }else{
+    getColor("#6495ED");
+  }
 }
 
 document.getElementById("searchBox").addEventListener("submit", colors);
