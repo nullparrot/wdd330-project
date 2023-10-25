@@ -14,7 +14,7 @@ html{
 
 h1,h2,h3,th{
     font-family: var(--script-font);
-    color: var(--accent-2);
+    color: black;
     text-transform: capitalize;
 }
 body{
